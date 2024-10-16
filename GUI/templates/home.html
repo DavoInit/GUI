@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <form class="search-form" action="/search" method="GET">
+                <input type="text" name="query" placeholder="Search..." />
+                <button type="submit">Search</button>
+                <button type="button" onclick="window.location.reload();">Refresh</button>  <!-- Refresh Button -->
+            </form>
+            <nav class="nav-buttons">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="video-grid">
+            {% for video in random_videos %}
+                <div class="video-item">
+                    <img src="{{ url_for('static', filename=video.thumbnail) }}" alt="{{ video.name }}">
+                    <p>{{ video.name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

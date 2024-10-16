@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            text-align: center; /* Center the heading */
+        }
+        .login-container {
+            max-width: 400px; /* Maximum width of the login form */
+            margin: 0 auto; /* Center the form horizontally */
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        .input-group {
+            margin-bottom: 15px; /* Space between input fields */
+        }
+        .input-group label {
+            display: block; /* Block display for labels */
+            margin-bottom: 5px; /* Space between label and input */
+        }
+        .input-group input {
+            width: 100%; /* Full width input */
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Include padding and border in the element's total width */
+        }
+        .login-button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%; /* Full width button */
+            box-sizing: border-box; /* Include padding and border in the element's total width */
+        }
+        .login-button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+        .footer {
+            text-align: center; /* Center footer text */
+            margin-top: 20px; /* Space above footer */
+        }
+        .footer a {
+            color: #007bff; /* Link color */
+            text-decoration: none; /* Remove underline */
+        }
+        .footer a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <div class="login-container">
+        <form action="{{ url_for('login') }}" method="POST">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+    </div>
+</body>
+</html>
